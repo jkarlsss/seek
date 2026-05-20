@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { toast } from "sonner";
 import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { toast } from "sonner";
 
 type SignUpInput = {
   email: string;
@@ -37,7 +37,7 @@ export function useSignUp() {
           onError: (ctx) => {
             toast.error(ctx.error.message || "Something went wrong.");
           },
-        }
+        },
       );
 
       if (error) {
@@ -85,7 +85,7 @@ export function useSignIn() {
           onError: (ctx) => {
             toast.error(ctx.error.message || "Something went wrong.");
           },
-        }
+        },
       );
 
       if (error) {
@@ -104,6 +104,28 @@ export function useSignIn() {
 
   return {
     signIn,
+    loading,
+  };
+}
+
+export function useLogout() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  const logout = async () => {
+    setLoading(true);
+    await authClient.signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          setLoading(false);
+          router.push("/sign-in"); // redirect to sign-in page after logout
+        },
+      },
+    });
+  };
+
+  return {
+    logout,
     loading,
   };
 }

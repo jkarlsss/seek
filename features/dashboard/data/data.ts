@@ -1,0 +1,88 @@
+import { Job, JobType, Workplace } from "../../../app/generated/prisma/client";
+
+export const jobs: Job[] = [
+  {
+    id: "1",
+    title: "Software Engineer",
+    company: "TechCorp",
+    location: "San Francisco, CA",
+    salaryMin: 120000,
+    salaryMax: 150000,
+    currency: "USD",
+    description:
+      "We are looking for a skilled Software Engineer to join our team. You will be responsible for developing high-quality software solutions and collaborating with cross-functional teams.",
+    requirements: [
+      "Bachelor's degree in Computer Science or related field",
+      "3+ years of experience in software development",
+      "Strong problem-solving skills",
+      "Excellent communication skills",
+    ],
+    benefits: [
+      "Competitive salary",
+      "Health insurance",
+      "401(k) matching",
+      "Diversity and inclusion programs",
+    ],
+    tags: ["JavaScript", "Node.js", "React", "AWS"],
+    type: JobType.FULL_TIME,
+    workplace: Workplace.ONSITE,
+    createdAt: new Date("2026-05-20"),
+    updatedAt: new Date("2026-05-20"),
+  },
+  {
+    id: "2",
+    title: "Frontend Developer",
+    company: "PixelFlow Studio",
+    location: "Remote",
+    salaryMin: 70000,
+    salaryMax: 95000,
+    currency: "USD",
+    description:
+      "Build clean, responsive, and user-friendly web interfaces using React, Next.js, and Tailwind CSS.",
+    requirements: [
+      "Experience with React or Next.js",
+      "Strong knowledge of HTML, CSS, and JavaScript",
+      "Familiarity with Tailwind CSS",
+      "Good eye for UI/UX design",
+    ],
+    benefits: [
+      "Remote work setup",
+      "Flexible working hours",
+      "Paid training",
+      "Performance bonuses",
+    ],
+    tags: ["React", "Next.js", "Tailwind CSS", "Remote"],
+    type: JobType.FULL_TIME,
+    workplace: Workplace.REMOTE,
+    createdAt: new Date("2026-05-19"),
+    updatedAt: new Date("2026-05-19"),
+  },
+  {
+    id: "3",
+    title: "Backend Developer",
+    company: "DataCore Systems",
+    location: "Austin, TX",
+    salaryMin: 90000,
+    salaryMax: 125000,
+    currency: "USD",
+    description:
+      "Design APIs, manage databases, and improve the performance of our server-side applications.",
+    requirements: [
+      "Experience with Node.js, Laravel, or FastAPI",
+      "Knowledge of PostgreSQL or MySQL",
+      "Understanding of REST API design",
+      "Experience with authentication and authorization",
+    ],
+    benefits: [
+      "Health insurance",
+      "Annual salary review",
+      "Learning budget",
+      "Paid vacation leave",
+    ],
+    tags: ["Node.js", "Laravel", "FastAPI", "PostgreSQL"],
+    type: JobType.FULL_TIME,
+    workplace: Workplace.HYBRID,
+    createdAt: new Date("2026-05-18"),
+    updatedAt: new Date("2026-05-18"),
+  },
+];

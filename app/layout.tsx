@@ -1,12 +1,16 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display, Inter } from "next/font/google";
-import "./globals.css";
 import { cn } from "@/lib/utils";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono, Inter, Playfair_Display } from "next/font/google";
 import { Toaster } from "sonner";
+import { TRPCReactProvider } from "../trpc/client";
+import "./globals.css";
 
-const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
+const playfairDisplayHeading = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-heading",
+});
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +35,20 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable, playfairDisplayHeading.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        geistSans.variable,
+        geistMono.variable,
+        "font-sans",
+        inter.variable,
+        playfairDisplayHeading.variable,
+      )}
     >
-      <body className="min-h-full flex flex-col">{children}<Toaster /></body>
+      <body className="min-h-full flex flex-col">
+        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <Toaster />
+      </body>
     </html>
   );
 }
