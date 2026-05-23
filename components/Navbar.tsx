@@ -26,7 +26,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useLogout } from "../features/auth/hooks/use-auth";
 import Link from "next/link";
-import { CreateJobDialog } from "../features/dashboard/components/create-job-dialog";
+import { CreateJobDialog } from "../features/jobs/components/create-job-dialog";
 
 interface MenuItem {
   title: string;
@@ -146,7 +146,7 @@ const Navbar = ({
   const { logout, loading } = useLogout();
 
   return (
-    <section className={cn("py-4 w-full bg-primary/10 mb-4", className)}>
+    <section className={cn("py-4 w-full bg-white shadow mb-4", className)}>
       <div className="flex items-center justify-center">
         {/* Desktop Menu */}
         <nav className="w-full hidden items-center justify-between lg:flex xl:px-40">

@@ -18,7 +18,7 @@ export const unauthenticated = async () => {
     headers: await headers(), // you need to pass the headers object.
   });
   if (session) {
-    return redirect("/"); // redirect to home page if authenticated
+    return redirect("/jobs"); // redirect to home page if authenticated
   }
   return session;
 };

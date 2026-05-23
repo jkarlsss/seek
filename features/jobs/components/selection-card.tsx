@@ -7,6 +7,7 @@ import {
 import { FilterIcon } from "lucide-react";
 import { Separator } from "../../../components/ui/separator";
 import FilterForm from "./filter-form";
+import { Logo } from "./logo";
 
 export function SelectionCard() {
   return (

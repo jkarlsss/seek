@@ -24,7 +24,7 @@ export function useSignUp() {
           email,
           password,
           name,
-          callbackURL: "/",
+          callbackURL: "/jobs",
         },
         {
           onRequest: () => {
@@ -32,7 +32,7 @@ export function useSignUp() {
           },
           onSuccess: () => {
             toast.success("Account created successfully!");
-            router.push("/");
+            router.push("/jobs");
           },
           onError: (ctx) => {
             toast.error(ctx.error.message || "Something went wrong.");
@@ -72,15 +72,15 @@ export function useSignIn() {
         {
           email,
           password,
-          callbackURL: "/",
+          callbackURL: "/jobs",
         },
         {
           onRequest: () => {
             setLoading(true);
           },
           onSuccess: () => {
-            toast.success("Account created successfully!");
-            router.push("/");
+            toast.success("Logged in successfully!");
+            router.push("/jobs");
           },
           onError: (ctx) => {
             toast.error(ctx.error.message || "Something went wrong.");
